@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --gold: #D4AF37;
+    --gold-glow: rgba(212, 175, 55, 0.4);
+    --saffron: #FF6F00;
+    --maroon: #380B14;
+  }
+}
+
+/* Custom Scrollbar for Divine Temple Feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #120508;
+}
+::-webkit-scrollbar-thumb {
+  background: #591B26;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF6F00;
+}
+
+/* Glassmorphism & Sacred Glow utilities */
+.sacred-glass {
+  background: rgba(34, 8, 14, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.sacred-glass-glow {
+  background: rgba(34, 8, 14, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 111, 0, 0.35);
+  box-shadow: 0 0 25px rgba(255, 111, 0, 0.15), inset 0 0 15px rgba(212, 175, 55, 0.1);
+}
+
+.golden-border-shimmer {
+  position: relative;
+}
+.golden-border-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, rgba(212, 175, 55, 0.7), transparent 40%, rgba(255, 111, 0, 0.7));
+  z-index: -1;
+  pointer-events: none;
+}
+
+.font-sanskrit {
+  font-family: 'Tiro Devanagari Sanskrit', serif;
+}
+
+.font-vedic {
+  font-family: 'Cinzel', serif;
+}
+
+/* Subtle scanner line animation for Lost Person facial recognition */
+@keyframes scanline {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(300%); }
+}
+
+.animate-scanline {
+  animation: scanline 2.5s ease-in-out infinite;
+}

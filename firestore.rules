@@ -1,0 +1,61 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Helper Functions
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isAuthenticated() && request.auth.uid == userId;
+    }
+
+    // 1. User Profiles: Devotees can read/write their own profiles
+    match /users/{userId} {
+      allow read: if isAuthenticated();
+      allow write: if isOwner(userId);
+    }
+
+    // 2. Lost Person Reports: Anyone can submit and view active cases
+    match /lost_persons/{reportId} {
+      allow read: if true;
+      allow create: if true;
+      allow update, delete: if isAuthenticated();
+    }
+
+    // 3. Health & Medical Records: Strictly private to individual devotee
+    match /health_records/{recordId} {
+      allow read, write: if isAuthenticated() && request.auth.uid == resource.data.userId;
+      allow create: if isAuthenticated();
+    }
+
+    // 4. Pilgrim Groups: Only group leader and invited members
+    match /groups/{groupId} {
+      allow read: if true;
+      allow create: if true;
+      allow update: if isAuthenticated();
+
+      match /members/{memberId} {
+        allow read, write: if true;
+      }
+    }
+
+    // 5. Official Guide Registry & Reports: Public read, admin-only write
+    match /guides/{guideId} {
+      allow read: if true;
+      allow write: if isAuthenticated() && request.auth.token.role == 'admin';
+    }
+
+    match /guide_reports/{reportId} {
+      allow create: if true;
+      allow read: if isAuthenticated();
+    }
+
+    // 6. SOS Emergency Alerts: Open write for urgent safety
+    match /sos_alerts/{alertId} {
+      allow create: if true;
+      allow read, update: if isAuthenticated();
+    }
+  }
+}
