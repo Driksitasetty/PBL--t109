@@ -114,3 +114,5 @@ The application includes complete Firebase integration code:
 
 ### Q3: How is the Pre-Medical Adviser trained?
 > **Answer:** In `backend/ml/train_model.py`, a `DecisionTreeClassifier` is trained on physiological parameters (altitude category, cardiac history, respiratory issues, age group, exertion). It classifies health risk into Low, Moderate, or High, outputting specific precautions.
+# PBL--t109
+piligrim safety management system that includes features like group tracking, lost person finding, pre health risk advisor,prevention from fraude tourist guide in which fronted will prepare using REACT, backend includes flask,dsa in c, machine learning, for data storage or updation it includes cloud based firebase 
