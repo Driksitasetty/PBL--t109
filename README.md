@@ -104,15 +104,6 @@ The application includes complete Firebase integration code:
 
 ---
 
-## 🎓 Teacher Presentation & Viva Questions Guide
 
-### Q1: How does the Dijkstra implementation work?
-> **Answer:** In `backend/algorithms/dijkstra.py`, we represent temple checkpoints as graph vertices and pathways as weighted edges. Using Python's `heapq` priority queue, the algorithm greedily explores the nearest unvisited checkpoint, relaxing neighbor distances. This achieves optimal $O((V + E) \log V)$ time complexity and guarantees the shortest walking distance.
-
-### Q2: How does the Lost Person Finder compare images without hardcoding?
-> **Answer:** In `backend/ml/image_matcher.py`, the backend decodes user-uploaded images, computes a 256-bit perceptual difference hash (dHash) analyzing horizontal frequency gradients, and pairs it with a normalized 3D RGB color histogram intersection. It returns an algorithmic similarity percentage and candidate classification.
-
-### Q3: How is the Pre-Medical Adviser trained?
-> **Answer:** In `backend/ml/train_model.py`, a `DecisionTreeClassifier` is trained on physiological parameters (altitude category, cardiac history, respiratory issues, age group, exertion). It classifies health risk into Low, Moderate, or High, outputting specific precautions.
 # PBL--t109
 piligrim safety management system that includes features like group tracking, lost person finding, pre health risk advisor,prevention from fraude tourist guide in which fronted will prepare using REACT, backend includes flask,dsa in c, machine learning, for data storage or updation it includes cloud based firebase 
