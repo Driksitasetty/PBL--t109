@@ -1,0 +1,18 @@
+{
+  "model_type": "DecisionTreeClassifier",
+  "accuracy": 0.8083,
+  "features": [
+    "age_group",
+    "altitude_category",
+    "exertion_level",
+    "has_heart_condition",
+    "has_breathing_issues",
+    "is_diabetic"
+  ],
+  "classes": [
+    "Low",
+    "Moderate",
+    "High"
+  ],
+  "sample_size": 1200
+}
