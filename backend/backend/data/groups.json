@@ -1,0 +1,46 @@
+{
+  "GRP-6EDC68": {
+    "groupId": "GRP-6EDC68",
+    "groupCode": "DS-8B60",
+    "groupName": "Kedarnath Yatra Sangh",
+    "pilgrimSite": "Kedarnath Dham",
+    "leaderName": "Arun Sharma",
+    "createdAt": "2026-10-18 14:25:56",
+    "members": [
+      {
+        "id": "gm-1",
+        "name": "Arun Sharma (Lead)",
+        "role": "Group Leader",
+        "lat": 30.7346,
+        "lng": 79.0669,
+        "distanceMeters": 0,
+        "battery": "92%",
+        "status": "Safe Nearby",
+        "pulseBpm": 76,
+        "altitude": "3,583 m"
+      }
+    ]
+  },
+  "GRP-5CE114": {
+    "groupId": "GRP-5CE114",
+    "groupCode": "DS-D13C",
+    "groupName": "Kedarnath Yatra Sangh",
+    "pilgrimSite": "Kedarnath Dham",
+    "leaderName": "Arun Sharma",
+    "createdAt": "2026-10-18 14:45:35",
+    "members": [
+      {
+        "id": "gm-1",
+        "name": "Arun Sharma (Lead)",
+        "role": "Group Leader",
+        "lat": 30.7346,
+        "lng": 79.0669,
+        "distanceMeters": 0,
+        "battery": "92%",
+        "status": "Safe Nearby",
+        "pulseBpm": 76,
+        "altitude": "3,583 m"
+      }
+    ]
+  }
+}
